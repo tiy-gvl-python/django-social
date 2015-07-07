@@ -13,8 +13,6 @@ After completing this assignment, you should be able to:
  - Demonstrate knowledge of basic application model structure by mimicing how
  popular "social" sites may store their data.
 
-## Functional Objectives
-
 
 ## Details
 
