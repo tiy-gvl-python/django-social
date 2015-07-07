@@ -21,7 +21,7 @@ After completing this assignment, you should be able to:
 * A Git repo called django-movies containing at least:
   * a `requirements.txt` file
   * a `README.md` file
-  * a Django project called `movieratings`
+  * a Django project called whatever you want to name your application
 
 ### Normal Mode
 
