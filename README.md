@@ -25,6 +25,8 @@ After completing this assignment, you should be able to:
 
 ### Normal Mode
 
+VIDEO: Watch this video - https://www.youtube.com/watch?v=Sadng6tR7Q4
+
 Django can be used in many ways - one particular way we've been demonstrating is by building a social
 site similar to Twitter.  There are an incredible amount of web applications that could be considered
 "social".  Your task is to mimic how you think a popular website has structured it's data so it can
