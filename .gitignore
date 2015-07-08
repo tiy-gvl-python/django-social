@@ -62,3 +62,6 @@ target/
 data/
 *.sqlite
 *.sqlite3
+db.sqlite3
+.envrc
+direnv
