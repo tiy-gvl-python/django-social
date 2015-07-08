@@ -24,12 +24,21 @@ class Post(models.Model):
     content = models.CharField(max_length=50)
 
     def __str__(self):
-        return "{}-{}".format(self.user.id, self.content)
+        return "{}-{}".format(self.user.name, self.content)
+
+
+class Group(models.Model):
+    user = models.ForeignKey('User')
+    content = models.TextField(max_length=50)
+    related_comments = models.ForeignKey('Post')
+    related_votes = models.ForeignKey('Vote')
+
+    def __str__(self):
+        return "{}-{}-{}-{}".format(self.user.name, self.content, self.related_comments.content, self.related_votes.bool)
 
 
 class Subscribe(models.Model):
-    to = models.ForeignKey('User')
     subscriptions = models.TextField()
 
     def __str__(self):
-        return "{}-{}".format(self.to.id, self.subscriptions)
+        return "{}".format(self.subscriptions)
