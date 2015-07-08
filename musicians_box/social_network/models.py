@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 
-class CommonUser(models.model):
+class CommonUser(models.Model):
     user = models.OneToOneField(User)
     location = models.CharField(max_length=100)
     age = models.IntegerField()
@@ -16,7 +16,6 @@ class CommonUser(models.model):
 
 
 class Musician(CommonUser):
-    video = models.CharField(max_length=300)
     genre = models.ManyToManyField('Genre')
     instrument = models.ManyToManyField('Instrument')
 
@@ -24,22 +23,23 @@ class Musician(CommonUser):
         return "{} is a musician".format(self.user)
 
 
-class Genre(models.model):
+class Genre(models.Model):
     genre = models.CharField(max_length=20)
 
     def __str__(self):
         return '{}'.format(self.genre)
 
 
-class Instrument(models.model):
+class Instrument(models.Model):
     instrument = models.CharField(max_length=20)
 
     def __str__(self):
         return '{}'.format(self.instrument)
 
 
-class Video(models.model):
+class Video(models.Model):
     musician = models.OneToOneField(Musician)
+    video = models.CharField(max_length=300)
     genre = models.ManyToManyField(Genre)
     instrument = models.ManyToManyField(Instrument)
     date_created = models.DateField(auto_now_add=True)
@@ -48,8 +48,7 @@ class Video(models.model):
         return 'Musician: {}, Date: {}'.format(self.musician, self.date_created)
 
 
-class Forum(models.model):
-    tags = models.ManyToManyField('Tags')
+class Forum(models.Model):
     topic = models.CharField(max_length=40)
     post = models.TextField
 
@@ -57,7 +56,7 @@ class Forum(models.model):
         return 'Topic: {} Post: {}'.format(self.topic, self.post)
 
 
-class Message(models.model):
+class Message(models.Model):
     sender = models.OneToOneField(CommonUser)
     recipient = models.ManyToManyField(CommonUser)
 
