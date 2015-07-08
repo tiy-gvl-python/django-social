@@ -9,7 +9,6 @@ class CommonUser(models.Model):
     location = models.CharField(max_length=100)
     age = models.IntegerField()
     sex = models.CharField(max_length=1)
-    message = models.OneToOneField('Message')
 
     def __str__(self):
         return "{} is not a musician".format(self.user)
@@ -56,9 +55,9 @@ class Forum(models.Model):
         return 'Topic: {} Post: {}'.format(self.topic, self.post)
 
 
-class Message(models.Model):
-    sender = models.OneToOneField(CommonUser)
-    recipient = models.ManyToManyField(CommonUser)
+#class Message(models.Model):
+ #   sender = models.OneToOneField(CommonUser)
+  #  recipient = models.ManyToManyField()
 
     def __str__(self):
         return 'Sender: {} \n Recipient(s): {}'.format(self.sender, self.recipient)
