@@ -4,11 +4,11 @@ from django.db import models
 
 # Create your models here.
 class Guser(models.Model):
-    user = models.ForeignKey(User)
+    user = models.OneToOneField(User)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=30)
     email = models.EmailField()
-    gender = models.CharField(max_length=1, empty=True)
+    gender = models.CharField(max_length=1, blank=True)
     birthday = models.DateField(null=True)
     creation = models.DateTimeField(auto_now=True)
 
@@ -16,9 +16,9 @@ class Guser(models.Model):
         return "{} {}".format(self.first_name, self.last_name)
 
 
-class Connection(models.Model):
-    owner = models.ForeignKey(Guser)
-    connection = models.ForeignKey(Guser)
+class Friendship(models.Model):
+    guser = models.ForeignKey(Guser, related_name="friendship_guser")
+    friend = models.ForeignKey(Guser, related_name="friendship_friend")
     circle = models.CharField(max_length=50)
     creation = models.DateTimeField(auto_now=True)
 
@@ -45,11 +45,12 @@ class Plus(models.Model):
 
 class Tag(models.Model):
     post = models.ForeignKey(Post)
-    tagger = models.ForeignKey(guser)
-    guser = models.ForeignKey(guser)
+    tagger = models.ForeignKey(Guser, related_name="tag_tagger")
+    guser = models.ForeignKey(Guser, related_name="tag_guser")
     creation = models.DateTimeField(auto_now=True)
 
 
 class PostCircle(models.Model):
-    circle = models.ForeignKey(Connection)
+    circle = models.ForeignKey(Friendship)
     post = models.ForeignKey(Post)
+    creation = models.DateTimeField(auto_now=True)
