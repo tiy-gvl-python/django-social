@@ -59,6 +59,4 @@ docs/_build/
 # PyBuilder
 target/
 
-data/
-*.sqlite
-*.sqlite3
+data/ *.sqlite *.sqlite3 db.sqlite3 .envrc .direnv .idea ../.idea/workspace.xml ../.idea/workspace.xml
