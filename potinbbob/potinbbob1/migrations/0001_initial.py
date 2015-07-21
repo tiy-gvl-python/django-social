@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 
-raise Exception()
+#raise Exception()
 
 
 class Migration(migrations.Migration):
