@@ -1,3 +1,4 @@
+I learned more about designing database models
 # Django Social Site (data)
 
 ## Description
