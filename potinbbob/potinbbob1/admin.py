@@ -1,10 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from potinbbob1.models import Pics
-from potinbbob1.models import User
-from potinbbob1.models import Category
+from potinbbob1.models import Pic
+from potinbbob1.models import UserProfile
+from potinbbob1.models import Genre
+from potinbbob1.models import Collection
 
-admin.site.register(Pics)
-admin.site.register(User)
-admin.site.register(Category)
+admin.site.register(Pic)
+admin.site.register(UserProfile)
+admin.site.register(Genre)
+admin.site.register(Collection)

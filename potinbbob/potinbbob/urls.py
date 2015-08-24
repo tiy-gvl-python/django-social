@@ -18,5 +18,4 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'potinbbob1.views.explain', name="explain"),
 ]
