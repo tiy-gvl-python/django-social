@@ -1,5 +1,4 @@
-# This was an early Django assignment for planning Models.  This app was never
-# meant to function.
+# This was an early Django assignment for planning Models.  This app was never intended to actually function.
 
 ## Django Social Site (data)
 
