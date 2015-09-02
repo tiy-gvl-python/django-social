@@ -1,4 +1,6 @@
-# Django Social Site (data)
+# This was an early Django assignment for planning Models.  This app was never intended to actually function.
+
+## Django Social Site (data)
 
 ## Description
 
